@@ -22,6 +22,7 @@ The project is still in architecture definition. v0.2 is not a shopping list.
 | D6 | DMR, LTE/SIM, second Wi-Fi, dual Ethernet and SDR host are post-MVP expansion modules | accepted |
 | D7 | Low-speed modules use a keyed IDC 2×8 connector; high-speed uses one PCIe x1 edge slot and one USB3 slot | accepted |
 | D8 | Dual power input: field XT30 (8–18 V, priority) + USB-C with PD trigger at 12 V, OR-ed at the input | accepted |
+| D9 | Two charging outputs: USB-C PD source (9 V/2 A or 12 V/1.5 A) for fast phone charging + simple USB-A 5 V/2.4 A | accepted |
 
 ## Core selection rationale
 
@@ -73,6 +74,7 @@ See [Power architecture v0.2](POWER-ARCHITECTURE-v0.2.md). Summary:
 - buck 3.3 V / 2 A;
 - per-bay switched 5 V, limited to 2 A, with measurement;
 - INA219 monitoring on input and 5 V backbone;
+- two device-charging outputs (D9): USB-C PD source + USB-A 5 V/2.4 A;
 - battery postponed to a separate gate.
 
 ## MVP purchase scope
@@ -125,12 +127,14 @@ A region-specific RF plan must exist before buying antennas, filters, DMR, LTE o
 - exact Class L connector keying part number;
 - per-bay limiter: IC eFuse vs discrete;
 - PD trigger chip choice (CH224K / IP2721 / similar);
+- PD source controller for charging output (IP2723T / CH235 / similar);
 - input OR-ing: Schottky diodes vs ideal-diode MOSFET.
 
 ## Progress log
 
 - Power tree and rails: drafted.
 - Dual power input (D8: XT30 priority + USB-C PD 12 V): decided.
+- Charging outputs (D9: USB-C PD source + USB-A 5 V): decided.
 - Module connector classes: drafted.
 - MVP carrier block diagram: drafted.
 

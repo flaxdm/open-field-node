@@ -158,13 +158,15 @@ A region-specific RF plan must exist before buying antennas, filters, DMR, LTE o
 - RF plan draft for Gate 4 (868 MHz, see RF-PLAN-v0.2.md).
 - Mechanical envelope drafted: 160×100 mm board, 6-bay rail at 25 mm pitch, front panel layout (see MECHANICAL-v0.2.md).
 - Network module: USB-WiFi (MT7921AU/RTL8811AU) on H2 for MVP — zero custom firmware, hostapd on CM5 (see NETWORK-MODULE-v0.2.md).
+- P0 prototype path decided: full platform validation on standard boards only (perforated board + ready modules + Waveshare dock), no custom PCB; KiCad entry moves after P0 validation (see P0-PROTOTYPE-v0.2.md).
 - Ready module market check: bench bring-up of the full power tree possible from ready modules (XL4015, PDC004, INA219, MCP23017, 65 W PD source); custom work reduces to per-bay limiter + input protection (see READY-MODULES-v0.2.md).
 - Module connector classes: drafted.
 - MVP carrier block diagram: drafted.
 
 ## Next engineering actions
 
-1. KiCad entry of backplane power schematic + carrier schematic (after review of design pack).
-2. Module standard update: card dimensions (22×60 mm), retention, IDC plug vs gold fingers (per MECHANICAL draft).
-3. Add Wi-Fi dongle (MT7921AU/RTL8811AU) + hostapd bring-up notes to dev station flow.
-4. First code milestone on dev station: ofn-powerd + ofn-slotd skeleton over Waveshare dock (GPIO header).
+1. Build P0 prototype (wiring per P0-PROTOTYPE-v0.2): power tree stages, 2 bays, hostapd link.
+2. First code milestone on the dock: ofn-powerd + ofn-slotd skeleton, INA219/MCP23017 live.
+3. LoRa bench: RFM95W 868 UART ping, then meshtasticd.
+4. Module standard update: card dimensions (22×60 mm), retention, IDC plug vs gold fingers (per MECHANICAL draft).
+5. KiCad entry of carrier + backplane power schematic after P0 validation.

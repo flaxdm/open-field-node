@@ -170,4 +170,9 @@ A region-specific RF plan must exist before buying antennas, filters, DMR, LTE o
 3. LoRa bench: RFM95W 868 SPI ping, then meshtasticd.
 4. ~~Module standard update~~ done: MODULE-STANDARD-v0.2.md (22×60 mm card, guide-slot retention, keyed IDC 2×8, v0.3 open points).
 5. ~~Wi-Fi bring-up notes~~ done: WIFI-BRINGUP-v0.2.md (hostapd + dnsmasq baseline for MT7921AU).
-6. KiCad entry of carrier + backplane power schematic after P0 validation.
+6. ~~Gap-closure docs~~ done: NODE-IDENTITY-v0.2 (passport EEPROM @0x57 + CR2032 RTC), HMI-LED-BUTTON-v0.2 (LED language, 0.5/2/5/10 s button), UPDATE-MECHANISM-v0.2 (A/B slots, ed25519 signature), P0-ACCEPTANCE-v0.2 (numeric pass criteria written before assembly).
+7. KiCad entry of carrier + backplane power schematic after P0 validation (carrier additions already specified: U7 AT24C32@0x57, BT1 CR2032+BAT54+1k, RGB LED on GPIO12/13/19, button on GPIO24).
+
+## Backlog
+
+Worked out at high level in `BACKLOG-v0.2.md` (B1 USB-gadget audit, B2 Bluetooth, B3 DMR, B4 LTE, B5 SDR, B6 LiFePO4, B7 ESP32 card, B8 sealing). Rules: no purchases or design until commanded; activation only after the item's trigger fires.

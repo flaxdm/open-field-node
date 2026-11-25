@@ -126,7 +126,7 @@ A region-specific RF plan must exist before buying antennas, filters, DMR, LTE o
 - Class L pinout compatibility with mikroBUS (same signal set, different power pin count — decide at schematic stage);
 - enclosure dimensions;
 - region-specific RF rules;
-- exact Class L connector keying part number;
+- exact Class L connector part number (family fixed: keyed shrouded IDC 2×8 2.54 mm; brand/part at PCB entry);
 - per-bay limiter: IC eFuse vs discrete;
 - PD trigger chip choice (CH224K / IP2721 / similar);
 - PD source controller for charging output (IP2723T / CH235 / similar);
@@ -138,6 +138,10 @@ A region-specific RF plan must exist before buying antennas, filters, DMR, LTE o
 - Dual power input (D8: XT30 priority + USB-C PD 12 V): decided.
 - Charging outputs (D9: USB-C PD source + USB-A 5 V): decided.
 - Module identification (D10): manual + I2C hints for ready-made modules, Pi HAT EEPROM for own modules — decided. Module descriptor schema freeze reduces to adopting the Pi HAT EEPROM format.
+- Backplane power schematic stage design: drafted (see BACKPLANE-SCHEMATIC-v0.2.md).
+- MVP carrier schematic stage design: drafted (see CARRIER-SCHEMATIC-v0.2.md).
+- Class L connector family confirmed: generic keyed 2.54 mm shrouded 2×8 box header (≈1 USD; mikroBUS signal-set compatible, socket compat open).
+- No-purchase BOM: drafted (see BOM-v0.2.md), board total ≈30–38 USD excl. core and LoRa radio.
 - Module connector classes: drafted.
 - MVP carrier block diagram: drafted.
 

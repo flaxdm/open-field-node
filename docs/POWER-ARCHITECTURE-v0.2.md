@@ -9,7 +9,8 @@ Goal: a cheap, common-parts power tree for the backplane. No exotic ICs. Battery
 3. Every low-speed module bay gets its own switched, current-limited 5 V rail with measurement.
 4. 3.3 V is a shared low-current rail for logic, module EEPROMs and sensors.
 5. No module may draw power from signal pins. Power contacts are always grouped separately.
-6. High-power RF amplifiers are out of MVP scope.
+6. Two device-charging outputs: USB-C with PD source (fast charge) and USB-A 5 V/2.4 A.
+7. High-power RF amplifiers are out of MVP scope.
 
 ## Power tree
 
@@ -22,7 +23,11 @@ USB-C ── PD trigger 12 V ───┘                                       
    │                                      │             └─── Buck/LDO 3.3 V
    │                                      └─── 3.3 V / 2 A shared logic rail
    │
-   └─── 12 V passthrough (fused, reserved for future RF PA)
+   ├─── 12 V passthrough (fused, reserved for future RF PA)
+   │
+   ├─── USB-C PD source out (9 V/2 A or 12 V/1.5 A, own buck) ── fast charge
+   │
+   └─── USB-A 5 V/2.4 A out (from 5 V backbone, PTC/load switch)
 ```
 
 ## Rails
@@ -34,6 +39,8 @@ USB-C ── PD trigger 12 V ───┘                                       
 | 5 V bay-N | eFuse/limiter from 5 V | 2 A per bay | LoRa, GPS, status, DMR |
 | 3.3 V | buck from 5 V | 2 A | EEPROM, sensors, MCU logic |
 | 12 V aux | fused passthrough | reserved | future RF PA / LTE |
+| 9/12 V PD out | own buck + PD source controller | 18–27 W | phone fast charge |
+| 5 V USB-A out | from 5 V backbone | 2.4 A, PTC/load switch | phone/accessory charge |
 
 ## Reference parts (cheap and common)
 
@@ -44,17 +51,23 @@ USB-C ── PD trigger 12 V ───┘                                       
 - Enable / power-good signals: MCP23017 I2C GPIO expander.
 - Input protection: P-MOSFET reverse polarity + TVS (SMBJ series).
 - PD trigger for USB-C input: CH224K or IP2721 (set to 12 V).
+- PD source controller for charging output: IP2723T / CH235 class + own buck for 9/12 V.
+- USB-A output: from 5 V backbone via PTC fuse or small load switch (2.4 A).
 - Input OR-ing: Schottky diodes (cheap) or ideal-diode P-MOSFET (lower loss).
 - Battery path: postponed. Candidate: LiFePO4 with charge controller; separate gate.
 
 ## Estimated power-section cost
 
-Roughly 7–11 USD for input protection, both bucks, six bay limiters and monitoring, plus PD trigger and input OR-ing, excluding connectors.
+Roughly 10–15 USD for input protection, both bucks, six bay limiters and monitoring, PD trigger and OR-ing, plus PD source + buck for fast charge and USB-A output protection, excluding connectors.
+
+Power budget note: with both outputs loaded (27 W + 12 W) the 5 V/6 A backbone and the 12 V input must be derated — bays may need a shared cap (e.g. total non-bay load ≤ 4 A from 5 V rail).
 
 ## Open questions
 
 - Input OR-ing method: Schottky diodes vs ideal-diode MOSFET (loss vs cost).
 - PD trigger chip: CH224K / IP2721 / similar.
+- PD source controller chip: IP2723T / CH235 / similar.
+- Non-bay load cap policy when charging (derating rule).
 - Per-bay limiter: IC eFuse vs discrete (cost vs simplicity).
 - Battery chemistry and charge controller (separate gate).
 - Peak current of H-bay SDR / LTE modules.

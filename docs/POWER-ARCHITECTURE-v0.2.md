@@ -4,7 +4,7 @@ Goal: a cheap, common-parts power tree for the backplane. No exotic ICs. Battery
 
 ## Principles
 
-1. 12 V field input is the backbone.
+1. 12 V field input is the backbone, fed from two OR-ed sources: field XT30 (8–18 V, priority) and USB-C with a PD trigger set to 12 V.
 2. Backplane generates 5 V (≈6 A) and 3.3 V (≈2 A).
 3. Every low-speed module bay gets its own switched, current-limited 5 V rail with measurement.
 4. 3.3 V is a shared low-current rail for logic, module EEPROMs and sensors.
@@ -14,10 +14,10 @@ Goal: a cheap, common-parts power tree for the backplane. No exotic ICs. Battery
 ## Power tree
 
 ```
-12 V IN (XT30 + DC jack, 8–18 V)
-   │
-   ├── Reverse polarity P-MOSFET ── TVS ──┐
-   │                                      │
+XT30 field input (8–18 V) ─┐
+                            ├── OR-ing (Schottky / ideal diode) ── Reverse polarity P-MOSFET ── TVS ──┐
+USB-C ── PD trigger 12 V ───┘                                                                        │
+                                                                                                       │
    ├─── Buck 5 V / 6 A ─── 5 V backbone ──┼── Bay 1..6: eFuse/lim 2 A + INA measure
    │                                      │             └─── Buck/LDO 3.3 V
    │                                      └─── 3.3 V / 2 A shared logic rail
@@ -29,7 +29,7 @@ Goal: a cheap, common-parts power tree for the backplane. No exotic ICs. Battery
 
 | Rail | Source | Limit | Consumers |
 |------|--------|-------|-----------|
-| 12 V in | XT30 / DC jack | 8–18 V, 3 A continuous | buck, passthrough |
+| 12 V in | XT30 (priority) or USB-C PD trigger (12 V), OR-ed | 8–18 V, 3 A continuous | buck, passthrough |
 | 5 V main | buck from 12 V | 6 A | module bays, 3.3 V buck, H-bays |
 | 5 V bay-N | eFuse/limiter from 5 V | 2 A per bay | LoRa, GPS, status, DMR |
 | 3.3 V | buck from 5 V | 2 A | EEPROM, sensors, MCU logic |
@@ -43,15 +43,18 @@ Goal: a cheap, common-parts power tree for the backplane. No exotic ICs. Battery
 - Rail monitoring: INA219 (I2C) on 12 V input and on 5 V backbone.
 - Enable / power-good signals: MCP23017 I2C GPIO expander.
 - Input protection: P-MOSFET reverse polarity + TVS (SMBJ series).
+- PD trigger for USB-C input: CH224K or IP2721 (set to 12 V).
+- Input OR-ing: Schottky diodes (cheap) or ideal-diode P-MOSFET (lower loss).
 - Battery path: postponed. Candidate: LiFePO4 with charge controller; separate gate.
 
 ## Estimated power-section cost
 
-Roughly 6–9 USD for input protection, both bucks, six bay limiters and monitoring, excluding connectors.
+Roughly 7–11 USD for input protection, both bucks, six bay limiters and monitoring, plus PD trigger and input OR-ing, excluding connectors.
 
 ## Open questions
 
-- Exact input connector: XT30 vs barrel vs screw terminal.
+- Input OR-ing method: Schottky diodes vs ideal-diode MOSFET (loss vs cost).
+- PD trigger chip: CH224K / IP2721 / similar.
 - Per-bay limiter: IC eFuse vs discrete (cost vs simplicity).
 - Battery chemistry and charge controller (separate gate).
 - Peak current of H-bay SDR / LTE modules.

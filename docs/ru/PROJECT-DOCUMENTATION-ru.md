@@ -235,6 +235,8 @@ BOM без покупок: `BOM-v0.2` — плата ~30–38 USD без ядр�
 | CARRIER-SCHEMATIC-v0.2 | Схема носителя, распиновка слотов |
 | MODULE-CONNECTOR-v0.2 | Сравнение разъёмов, классы L/H |
 | MODULE-DESCRIPTOR-v0.2 | Формат «бирки» EEPROM |
+| MODULE-STANDARD-v0.2 | Стандарт карточки модуля: 22×60 мм, IDC 2×8, чек-лист платы |
+| WIFI-BRINGUP-v0.2 | Поднятие точки доступа на донгле MT7921AU (hostapd, грабли) |
 | SOFTWARE-ARCHITECTURE-v0.2 | Сервисы, API, приложение, survival mode |
 | NETWORK-MODULE-v0.2 | Выбор Wi-Fi решения, hostapd |
 | RF-PLAN-v0.2 | Диапазоны, мощности, разнос антенн (Gate 4) |
@@ -242,6 +244,7 @@ BOM без покупок: `BOM-v0.2` — плата ~30–38 USD без ядр�
 | BOM-v0.2 | Список деталей без покупок |
 | READY-MODULES-v0.2 | Что из схемы есть готовыми модулями |
 | P0-PROTOTYPE-v0.2 | Сборка прототипа на стандартных платах |
+| P0-ASSEMBLY-CHECKLIST | Шпаргалка «день получения железа»: 6 этапов с проверками |
 | DEV-STATION-BUYLIST | Список закупки (~28–30 тыс. ₽) |
 | ROADMAP, ARCHITECTURE, MODULE-STANDARD, CAPABILITY-API | Документы v0.1 (история/контекст) |
 

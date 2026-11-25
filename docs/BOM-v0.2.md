@@ -59,6 +59,17 @@ Subtotal carrier ≈ 14 USD
 
 Excludes: CM5 core (≈45–60 for 8 GB Lite), LoRa radio module (≈5–15 for RA-02/RFM95W-class), enclosure, antennas.
 
+## Dev station (dev-kit gate, separate from field MVP)
+
+| # | Item | Part / class | Qty | Unit est. | Sum |
+|---|------|--------------|-----|-----------|-----|
+| D1 | Dev board | Raspberry Pi 5 8 GB | 1 | 80 | 80 |
+| D2 | PSU 5 V/5 A USB-C (official or PD 5A class) | | 1 | 15 | 15 |
+| D3 | Case + microSD 64 GB | | 1 | 12 | 12 |
+| D4 | LoRa USB dongle for bench (RA-02/RFM95W on USB or similar) | | 1 | 12 | 12 |
+
+Dev station subtotal ≈ 120 USD. Allowed now under dev-kit gate; does not unlock any field purchase (per SPEC D11).
+
 ## Cost-reduction options (decision points)
 
 - TPS2553 ×7 → discrete P-MOSFET limiter ×7: saves ≈4 USD, adds 12 parts, loses /FAULT.

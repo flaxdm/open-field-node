@@ -22,6 +22,7 @@ Architecture baseline v0.2 is drafted: power tree, module connector classes, pow
 - [Module descriptor v0.2](docs/MODULE-DESCRIPTOR-v0.2.md)
 - [Software architecture v0.2](docs/SOFTWARE-ARCHITECTURE-v0.2.md)
 - [Dev station buy list](docs/DEV-STATION-BUYLIST.md)
+- [Ready-made modules mapping v0.2](docs/READY-MODULES-v0.2.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Module standard draft](docs/MODULE-STANDARD.md)
 - [Capability API draft](docs/CAPABILITY-API.md)

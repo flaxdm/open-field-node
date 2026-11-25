@@ -9,7 +9,7 @@ Decision D11-dev (2026-11-25): dev station is a CM5 8 GB Lite (no-wireless) that
 | 3 | PSU 5V/5A 27W USB-C | «блок питания Raspberry Pi 5 27W 5V 5A» | ~1500 | Same PSU family serves Pi-class boards |
 | 4 | CM5 active cooler | «кулер Raspberry Pi CM5» | ~400 | Included in some Waveshare BOX kits — check before buying separately |
 | 5 | microSD 64GB A1 | «microSD 64GB A1 Samsung SanDisk» | ~700 | Lite has no eMMC — system lives on SD |
-| 6 | LoRa bench: RA-02 (SX1278 433MHz) + USB-UART CH340 | «Ra-02 SX1278», «USB UART CH340» | ~900 | Frequency per region (433 MHz for RU/EU); wires to GPIO header UART |
+| 6 | LoRa bench: SX1276/RFM95W 868 MHz module + USB-UART CH340 | «RFM95W 868», «SX1276 868», «USB UART CH340» | ~1000 | Region fixed by D13: 868 MHz; wires to GPIO header UART |
 | 7 | Dupont wires + breadboard | «набор dupont макетная плата» | ~500 | For bench wiring to GPIO header |
 
 **Total estimate: ~25–26k ₽.**

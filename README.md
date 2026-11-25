@@ -12,6 +12,7 @@ Architecture baseline v0.2 is drafted: power tree, module connector classes, pow
 
 ## Key documents
 
+- [Full project documentation](docs/PROJECT-DOCUMENTATION.md)
 - [SPEC v0.2 — architecture baseline before purchases](docs/SPEC-v0.2.md)
 - [Power architecture v0.2](docs/POWER-ARCHITECTURE-v0.2.md)
 - [Module connector comparison v0.2](docs/MODULE-CONNECTOR-v0.2.md)

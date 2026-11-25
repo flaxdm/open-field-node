@@ -24,6 +24,8 @@ Architecture baseline v0.2 is drafted: power tree, module connector classes, pow
 - [Dev station buy list](docs/DEV-STATION-BUYLIST.md)
 - [Ready-made modules mapping v0.2](docs/READY-MODULES-v0.2.md)
 - [RF plan v0.2](docs/RF-PLAN-v0.2.md)
+- [Mechanical envelope v0.2](docs/MECHANICAL-v0.2.md)
+- [Network module selection v0.2](docs/NETWORK-MODULE-v0.2.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Module standard draft](docs/MODULE-STANDARD.md)
 - [Capability API draft](docs/CAPABILITY-API.md)

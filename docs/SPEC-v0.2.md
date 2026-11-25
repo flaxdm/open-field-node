@@ -165,8 +165,9 @@ A region-specific RF plan must exist before buying antennas, filters, DMR, LTE o
 
 ## Next engineering actions
 
-1. Build P0 prototype (wiring per P0-PROTOTYPE-v0.2): power tree stages, 2 bays, hostapd link.
+1. Build P0 prototype (day-one order: P0-ASSEMBLY-CHECKLIST-ru.md; wiring per P0-PROTOTYPE-v0.2): power tree stages, monitoring, LoRa ping, hostapd AP.
 2. First code milestone on the dock: ofn-powerd + ofn-slotd skeleton, INA219/MCP23017 live.
-3. LoRa bench: RFM95W 868 UART ping, then meshtasticd.
-4. Module standard update: card dimensions (22×60 mm), retention, IDC plug vs gold fingers (per MECHANICAL draft).
-5. KiCad entry of carrier + backplane power schematic after P0 validation.
+3. LoRa bench: RFM95W 868 SPI ping, then meshtasticd.
+4. ~~Module standard update~~ done: MODULE-STANDARD-v0.2.md (22×60 mm card, guide-slot retention, keyed IDC 2×8, v0.3 open points).
+5. ~~Wi-Fi bring-up notes~~ done: WIFI-BRINGUP-v0.2.md (hostapd + dnsmasq baseline for MT7921AU).
+6. KiCad entry of carrier + backplane power schematic after P0 validation.

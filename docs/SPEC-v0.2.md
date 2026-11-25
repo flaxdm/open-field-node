@@ -24,6 +24,7 @@ The project is still in architecture definition. v0.2 is not a shopping list.
 | D8 | Dual power input: field XT30 (8–18 V, priority) + USB-C with PD trigger at 12 V, OR-ed at the input | accepted |
 | D9 | Two charging outputs: USB-C PD source (9 V/2 A or 12 V/1.5 A) for fast phone charging + simple USB-A 5 V/2.4 A | accepted |
 | D10 | Module identification: ready-made third-party modules (e.g. mikroBUS Click) — manual slot configuration + I2C address hints; own/community modules — ID EEPROM in Raspberry Pi HAT format (AT24C32-class on I2C 0x50) | accepted |
+| D11 | Field core stays CM5-class no-wireless (D1); a separate Raspberry Pi 5 dev station is bought under its own dev-kit gate — software stack is identical between Pi 5 and CM5 | accepted |
 
 ## Core selection rationale
 
@@ -98,6 +99,13 @@ Not in MVP purchase scope:
 - SDR host module;
 - 5G hardware;
 - final enclosure production.
+
+## Dev station (separate from MVP field scope)
+
+- One Raspberry Pi 5 (8 GB) + PSU + case + microSD as the home development station.
+- Purpose: software bring-up (Android ↔ node protocol, slot logic, LoRa software via USB dongle) before the custom carrier exists.
+- Not field hardware; stays on the bench. Software is shared with the CM5 field core (same silicon/OS per D11).
+- Purchase rule: dev-kit gate — allowed to buy now, does not unlock any field purchase.
 
 ## Purchase gates
 

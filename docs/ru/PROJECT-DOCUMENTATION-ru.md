@@ -237,6 +237,11 @@ BOM без покупок: `BOM-v0.2` — плата ~30–38 USD без ядр�
 | MODULE-DESCRIPTOR-v0.2 | Формат «бирки» EEPROM |
 | MODULE-STANDARD-v0.2 | Стандарт карточки модуля: 22×60 мм, IDC 2×8, чек-лист платы |
 | WIFI-BRINGUP-v0.2 | Поднятие точки доступа на донгле MT7921AU (hostapd, грабли) |
+| NODE-IDENTITY-v0.2 | Паспорт узла: EEPROM 0x57, UUID→SSID, CR2032 для RTC |
+| HMI-LED-BUTTON-v0.2 | Язык RGB-светодиода и поведение кнопки (0.5/2/5/10 с) |
+| UPDATE-MECHANISM-v0.2 | Обновление ПО: A/B-слоты, подпись ed25519, откат |
+| P0-ACCEPTANCE-v0.2 | Числовые критерии приёмки P0 (пишутся до сборки) |
+| BACKLOG-v0.2 | Бэклог B1–B8: проработка, усилия, зависимости, триггеры |
 | SOFTWARE-ARCHITECTURE-v0.2 | Сервисы, API, приложение, survival mode |
 | NETWORK-MODULE-v0.2 | Выбор Wi-Fi решения, hostapd |
 | RF-PLAN-v0.2 | Диапазоны, мощности, разнос антенн (Gate 4) |

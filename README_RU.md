@@ -26,6 +26,7 @@
 - [RF plan v0.2](docs/ru/RF-PLAN-v0.2-ru.md)
 - [Механический конверт v0.2](docs/ru/MECHANICAL-v0.2-ru.md)
 - [Выбор сетевого модуля v0.2](docs/ru/NETWORK-MODULE-v0.2-ru.md)
+- [Сборка прототипа P0 v0.2](docs/ru/P0-PROTOTYPE-v0.2-ru.md)
 - [Архитектура](docs/ru/ARCHITECTURE.md)
 - [Стандарт модуля](docs/ru/MODULE-STANDARD.md)
 - [Capability API](docs/ru/CAPABILITY-API.md)

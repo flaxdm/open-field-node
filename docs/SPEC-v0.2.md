@@ -156,6 +156,8 @@ A region-specific RF plan must exist before buying antennas, filters, DMR, LTE o
 - Module descriptor: Pi HAT EEPROM format adopted with OFN extension fields (see MODULE-DESCRIPTOR-v0.2.md).
 - Software architecture: services, control API, Android companion, survival mode drafted (see SOFTWARE-ARCHITECTURE-v0.2.md). Control link decided: Wi-Fi AP (D12).
 - RF plan draft for Gate 4 (868 MHz, see RF-PLAN-v0.2.md).
+- Mechanical envelope drafted: 160×100 mm board, 6-bay rail at 25 mm pitch, front panel layout (see MECHANICAL-v0.2.md).
+- Network module: USB-WiFi (MT7921AU/RTL8811AU) on H2 for MVP — zero custom firmware, hostapd on CM5 (see NETWORK-MODULE-v0.2.md).
 - Ready module market check: bench bring-up of the full power tree possible from ready modules (XL4015, PDC004, INA219, MCP23017, 65 W PD source); custom work reduces to per-bay limiter + input protection (see READY-MODULES-v0.2.md).
 - Module connector classes: drafted.
 - MVP carrier block diagram: drafted.
@@ -163,6 +165,6 @@ A region-specific RF plan must exist before buying antennas, filters, DMR, LTE o
 ## Next engineering actions
 
 1. KiCad entry of backplane power schematic + carrier schematic (after review of design pack).
-2. Envelope/mechanical draft: board size, bay spacing, front panel (blocks enclosure).
-3. Wi-Fi AP module selection for the MVP network slot (ESP32-class vs USB-WiFi on H2).
+2. Module standard update: card dimensions (22×60 mm), retention, IDC plug vs gold fingers (per MECHANICAL draft).
+3. Add Wi-Fi dongle (MT7921AU/RTL8811AU) + hostapd bring-up notes to dev station flow.
 4. First code milestone on dev station: ofn-powerd + ofn-slotd skeleton over Waveshare dock (GPIO header).

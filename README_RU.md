@@ -23,6 +23,7 @@
 - [Программная архитектура v0.2](docs/ru/SOFTWARE-ARCHITECTURE-v0.2-ru.md)
 - [Список закупки dev-станции](docs/ru/DEV-STATION-BUYLIST-ru.md)
 - [Соответствие готовым модулям v0.2](docs/ru/READY-MODULES-v0.2-ru.md)
+- [RF plan v0.2](docs/ru/RF-PLAN-v0.2-ru.md)
 - [Архитектура](docs/ru/ARCHITECTURE.md)
 - [Стандарт модуля](docs/ru/MODULE-STANDARD.md)
 - [Capability API](docs/ru/CAPABILITY-API.md)

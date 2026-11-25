@@ -4,6 +4,8 @@ Open modular headless field platform for communications, radio monitoring, survi
 
 The device has no screen and no keyboard. An Android smartphone is used for control, mission planning, live monitoring, analysis and reporting. The node itself can run autonomously, store logs and sync later.
 
+Language: **English** | [Русский](README_RU.md)
+
 ## Status
 
 Concept v0.1. Hardware, firmware and software specifications are being defined.

@@ -8,7 +8,14 @@
 
 ## Статус
 
-Концепт v0.1. Спецификации hardware, firmware и software находятся в стадии формирования.
+Черновик архитектурной базы v0.2 готов. Покупки не утверждены до прохождения review gates.
+
+## Ключевые документы
+
+- [SPEC v0.2 — архитектурная база до покупок](docs/ru/SPEC-v0.2.md)
+- [Архитектура](docs/ru/ARCHITECTURE.md)
+- [Стандарт модуля](docs/ru/MODULE-STANDARD.md)
+- [Capability API](docs/ru/CAPABILITY-API.md)
 
 ## Область применения
 
@@ -24,14 +31,6 @@
 
 Security‑ и RF‑передающие функции рассчитаны только на собственные устройства, собственную сеть или изолированный стенд.
 
-## Документация
+## Лицензии
 
-- [Спецификация v0.1](docs/ru/SPEC-v0.1.md)
-- [Архитектура](docs/ru/ARCHITECTURE.md)
-- [Стандарт модуля](docs/ru/MODULE-STANDARD.md)
-- [Capability API](docs/ru/CAPABILITY-API.md)
-- [RF Guidelines](docs/ru/RF-GUIDELINES.md)
-- [Power Guidelines](docs/ru/POWER-GUIDELINES.md)
-- [Roadmap](ROADMAP_RU.md)
-- [Contributing](CONTRIBUTING_RU.md)
-- [Security Policy](SECURITY_RU.md)
+Структура лицензий описана в `LICENSES/README.md`.

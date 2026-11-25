@@ -8,7 +8,14 @@ Language: **English** | [Русский](README_RU.md)
 
 ## Status
 
-Concept v0.1. Hardware, firmware and software specifications are being defined.
+Architecture baseline v0.2 is drafted. No purchase is approved until review gates are passed.
+
+## Key documents
+
+- [SPEC v0.2 — architecture baseline before purchases](docs/SPEC-v0.2.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Module standard draft](docs/MODULE-STANDARD.md)
+- [Capability API draft](docs/CAPABILITY-API.md)
 
 ## Scope
 

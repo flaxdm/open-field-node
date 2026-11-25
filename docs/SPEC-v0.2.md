@@ -24,7 +24,7 @@ The project is still in architecture definition. v0.2 is not a shopping list.
 | D8 | Dual power input: field XT30 (8–18 V, priority) + USB-C with PD trigger at 12 V, OR-ed at the input | accepted |
 | D9 | Two charging outputs: USB-C PD source (9 V/2 A or 12 V/1.5 A) for fast phone charging + simple USB-A 5 V/2.4 A | accepted |
 | D10 | Module identification: ready-made third-party modules (e.g. mikroBUS Click) — manual slot configuration + I2C address hints; own/community modules — ID EEPROM in Raspberry Pi HAT format (AT24C32-class on I2C 0x50) | accepted |
-| D11 | Field core stays CM5-class no-wireless (D1); a separate Raspberry Pi 5 dev station is bought under its own dev-kit gate — software stack is identical between Pi 5 and CM5 | accepted |
+| D11 | Dev station is a CM5 8 GB Lite (no-wireless, CM5108000) on a Waveshare CM5-IO-BASE-A dock, bought under the dev-kit gate; the same CM5 later becomes the field core — one purchase, no discarded hardware | accepted |
 
 ## Core selection rationale
 
@@ -102,10 +102,10 @@ Not in MVP purchase scope:
 
 ## Dev station (separate from MVP field scope)
 
-- One Raspberry Pi 5 (8 GB) + PSU + case + microSD as the home development station.
-- Purpose: software bring-up (Android ↔ node protocol, slot logic, LoRa software via USB dongle) before the custom carrier exists.
-- Not field hardware; stays on the bench. Software is shared with the CM5 field core (same silicon/OS per D11).
-- Purchase rule: dev-kit gate — allowed to buy now, does not unlock any field purchase.
+- CM5 8 GB Lite (no-wireless) + Waveshare CM5-IO-BASE-A + 27 W PSU + cooler + microSD + LoRa bench set. Full list: [Dev station buy list](DEV-STATION-BUYLIST.md) (~25–26k ₽).
+- Purpose: software bring-up (Android ↔ node protocol, slot logic, LoRa software via GPIO UART) before the custom carrier exists.
+- The CM5 moves into the field carrier after Gate 3 — this purchase doubles as the field core.
+- Purchase rule: dev-kit gate — allowed to buy now, does not unlock any other field purchase.
 
 ## Purchase gates
 
@@ -150,13 +150,16 @@ A region-specific RF plan must exist before buying antennas, filters, DMR, LTE o
 - MVP carrier schematic stage design: drafted (see CARRIER-SCHEMATIC-v0.2.md).
 - Class L connector family confirmed: generic keyed 2.54 mm shrouded 2×8 box header (≈1 USD; mikroBUS signal-set compatible, socket compat open).
 - No-purchase BOM: drafted (see BOM-v0.2.md), board total ≈30–38 USD excl. core and LoRa radio.
+- Gate 1 power budget: passed with changes — 12 V input 5 A, OR-ing SS54, bay cap 3 A, USB-A shed rule (see POWER-BUDGET-v0.2.md).
+- Module descriptor: Pi HAT EEPROM format adopted with OFN extension fields (see MODULE-DESCRIPTOR-v0.2.md).
+- Software architecture: services, control API, Android companion, survival mode drafted (see SOFTWARE-ARCHITECTURE-v0.2.md). Open: control link choice (Wi-Fi AP / USB-C / BLE).
 - Module connector classes: drafted.
 - MVP carrier block diagram: drafted.
 
 ## Next engineering actions
 
-1. Freeze module descriptor format — adopt Pi HAT EEPROM format (open standard, existing tools).
-2. Draft backplane power tree schematic from Power architecture v0.2.
-3. Draft MVP carrier schematic (CM5 + backplane connector pinout).
-4. Confirm Class L IDC keying part numbers and current rating.
-5. Produce a no-purchase bill of materials for review.
+1. Control link decision (Wi-Fi AP / USB-C / BLE) — blocks Gate 2 freeze.
+2. RF plan draft for Gate 4 (region, bands, antenna isolation) — needs region confirmation.
+3. KiCad entry of backplane power schematic + carrier schematic (after review of design pack).
+4. Envelope/mechanical draft: board size, bay spacing, front panel (blocks enclosure).
+5. First code milestone on dev station: ofn-powerd + ofn-slotd skeleton over Waveshare dock (GPIO header).

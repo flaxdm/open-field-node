@@ -8,11 +8,13 @@
 
 ## Статус
 
-Черновик архитектурной базы v0.2 готов. Покупки не утверждены до прохождения review gates.
+Черновик архитектурной базы v0.2 готов. Дерево питания и классы разъёмов модулей проработаны. Покупки не утверждены до прохождения review gates.
 
 ## Ключевые документы
 
 - [SPEC v0.2 — архитектурная база до покупок](docs/ru/SPEC-v0.2.md)
+- [Архитектура питания v0.2](docs/ru/POWER-ARCHITECTURE-v0.2.md)
+- [Сравнение разъёмов модулей v0.2](docs/ru/MODULE-CONNECTOR-v0.2.md)
 - [Архитектура](docs/ru/ARCHITECTURE.md)
 - [Стандарт модуля](docs/ru/MODULE-STANDARD.md)
 - [Capability API](docs/ru/CAPABILITY-API.md)

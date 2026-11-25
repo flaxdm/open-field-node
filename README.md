@@ -8,13 +8,16 @@ Language: **English** | [Русский](README_RU.md)
 
 ## Status
 
-Architecture baseline v0.2 is drafted. Power tree and module connector classes are drafted. No purchase is approved until review gates are passed.
+Architecture baseline v0.2 is drafted: power tree, module connector classes, power/carrier schematic stage designs and a no-purchase BOM. Decisions D1–D10 are recorded in SPEC v0.2. No purchase is approved until review gates are passed.
 
 ## Key documents
 
 - [SPEC v0.2 — architecture baseline before purchases](docs/SPEC-v0.2.md)
 - [Power architecture v0.2](docs/POWER-ARCHITECTURE-v0.2.md)
 - [Module connector comparison v0.2](docs/MODULE-CONNECTOR-v0.2.md)
+- [Backplane power schematic v0.2](docs/BACKPLANE-SCHEMATIC-v0.2.md)
+- [MVP carrier schematic v0.2](docs/CARRIER-SCHEMATIC-v0.2.md)
+- [BOM v0.2 (no-purchase)](docs/BOM-v0.2.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Module standard draft](docs/MODULE-STANDARD.md)
 - [Capability API draft](docs/CAPABILITY-API.md)

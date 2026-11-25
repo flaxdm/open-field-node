@@ -153,6 +153,7 @@ A region-specific RF plan must exist before buying antennas, filters, DMR, LTE o
 - Gate 1 power budget: passed with changes — 12 V input 5 A, OR-ing SS54, bay cap 3 A, USB-A shed rule (see POWER-BUDGET-v0.2.md).
 - Module descriptor: Pi HAT EEPROM format adopted with OFN extension fields (see MODULE-DESCRIPTOR-v0.2.md).
 - Software architecture: services, control API, Android companion, survival mode drafted (see SOFTWARE-ARCHITECTURE-v0.2.md). Open: control link choice (Wi-Fi AP / USB-C / BLE).
+- Ready module market check: bench bring-up of the full power tree possible from ready modules (XL4015, PDC004, INA219, MCP23017, 65 W PD source); custom work reduces to per-bay limiter + input protection (see READY-MODULES-v0.2.md).
 - Module connector classes: drafted.
 - MVP carrier block diagram: drafted.
 

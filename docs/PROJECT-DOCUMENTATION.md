@@ -63,7 +63,7 @@ Docs: `POWER-ARCHITECTURE-v0.2`, `POWER-BUDGET-v0.2`, `READY-MODULES-v0.2`.
 - **Class H**: H1 = PCIe x1 edge (SDR/NVMe/2nd GbE, D3 reserve); H2 = USB3 19-pin (Wi-Fi dongle for control, USB-SDR, storage). Rule: max two high-bandwidth USB devices; control modules never on USB.
 - **Identification (D10)**: ready-made modules → manual config + I2C hints; own modules → EEPROM in Raspberry Pi HAT format with OFN fields (class, current limits, RF regions, name, UUID). Node applies limits before enabling; TX region enforced in firmware.
 
-Docs: `MODULE-CONNECTOR-v0.2`, `MODULE-DESCRIPTOR-v0.2`.
+Docs: `MODULE-CONNECTOR-v0.2`, `MODULE-DESCRIPTOR-v0.2`, `MODULE-STANDARD-v0.2`.
 
 ## 6. Software
 
@@ -150,6 +150,6 @@ No-purchase BOM: `BOM-v0.2` (board ≈30–38 USD excl. core/LoRa).
 
 ## Document registry
 
-SPEC-v0.2 · POWER-ARCHITECTURE-v0.2 · POWER-BUDGET-v0.2 · BACKPLANE-SCHEMATIC-v0.2 · CARRIER-SCHEMATIC-v0.2 · MODULE-CONNECTOR-v0.2 · MODULE-DESCRIPTOR-v0.2 · SOFTWARE-ARCHITECTURE-v0.2 · NETWORK-MODULE-v0.2 · RF-PLAN-v0.2 · MECHANICAL-v0.2 · BOM-v0.2 · READY-MODULES-v0.2 · P0-PROTOTYPE-v0.2 · DEV-STATION-BUYLIST · plus v0.1 docs (ROADMAP, ARCHITECTURE, MODULE-STANDARD, CAPABILITY-API).
+SPEC-v0.2 · POWER-ARCHITECTURE-v0.2 · POWER-BUDGET-v0.2 · BACKPLANE-SCHEMATIC-v0.2 · CARRIER-SCHEMATIC-v0.2 · MODULE-CONNECTOR-v0.2 · MODULE-DESCRIPTOR-v0.2 · MODULE-STANDARD-v0.2 · SOFTWARE-ARCHITECTURE-v0.2 · NETWORK-MODULE-v0.2 · WIFI-BRINGUP-v0.2 · RF-PLAN-v0.2 · MECHANICAL-v0.2 · BOM-v0.2 · READY-MODULES-v0.2 · P0-PROTOTYPE-v0.2 · P0-ASSEMBLY-CHECKLIST · DEV-STATION-BUYLIST · plus v0.1 docs (ROADMAP, ARCHITECTURE, MODULE-STANDARD, CAPABILITY-API).
 
 Repo: github.com/flaxdm/open-field-node (EN in `docs/`, RU in `docs/ru/`).

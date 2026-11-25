@@ -9,7 +9,7 @@ Stage-by-stage design for the backplane power section. Every stage lists: functi
 | J1 | Field input XT30, 8–18 V | Amass XT30UPB or generic XT30 | 2 A continuous target, 15 A plug rating |
 | J2 | USB-C input | USB-C 16-pin mid-mount SMD receptacle | CC1/CC2 to PD trigger |
 | U1 | PD trigger, requests 12 V | CH224K or IP2721 | Rd on CC; output 12 V from a PD supply |
-| D1/D2 | Input OR-ing | SS34 Schottky ×2 (or dual ideal-diode P-MOSFET, e.g. back-to-back AO3401A-class) | XT30 has priority by topology (OR after both); Schottky loss ≈0.4 V / 1.5 W at 3 A — acceptable; ideal-diode variant lowers loss |
+| D1/D2 | Input OR-ing | SS54 Schottky ×2 (or dual ideal-diode P-MOSFET) | Sized 5 A per Power budget v0.2; XT30 priority by topology; ideal-diode variant lowers loss |
 | Q1 | Reverse polarity P-MOSFET, high-side | AO3401A-class, Vds ≥ 30 V | Body diode orients so correct polarity turns FET on |
 | TVS1 | Surge clamp | SMBJ16A–SMBJ18A class | Final value set at layout after input range check |
 
@@ -78,7 +78,7 @@ Fused `VIN_12V → 12V_AUX` (PTC/polyfuse 3 A) for future RF PA / LTE amp. Prese
 - Per bay: TPS2553 limit 2 A + /FAULT.
 - USB-A out: U12 current-limited switch.
 - PD out: controller current limit + input fuse.
-- Board input: 3 A PTC polyfuse before OR-ing (both inputs each own PTC).
+- Board input: 5 A PTC polyfuse before OR-ing (both inputs each own PTC) — raised from 3 A per Power budget v0.2.
 
 ## Layout notes
 
@@ -86,6 +86,11 @@ Fused `VIN_12V → 12V_AUX` (PTC/polyfuse 3 A) for future RF PA / LTE amp. Prese
 - 5 V backbone: star from U2 to limiters, wide pours.
 - Keep PD-output buck away from LoRa/GPS bay routing (switching noise).
 - INA219 shunts in-line on power path, Kelvin sense.
+
+## Power policy (from Power budget v0.2)
+
+- Total bays capped at 3 A (15 W); USB-A output sheds to 1 A when bays > 2 A; shedding order USB-A → bay6..bay1; core never shed.
+- On USB-C PD input: platform runs in low-power mode (PD out off, bays limited, app notified).
 
 ## Open points for schematic entry
 

@@ -12,6 +12,7 @@
 
 ## Ключевые документы
 
+- [Полная документация проекта](docs/ru/PROJECT-DOCUMENTATION-ru.md)
 - [SPEC v0.2 — архитектурная база до покупок](docs/ru/SPEC-v0.2.md)
 - [Архитектура питания v0.2](docs/ru/POWER-ARCHITECTURE-v0.2.md)
 - [Сравнение разъёмов модулей v0.2](docs/ru/MODULE-CONNECTOR-v0.2.md)

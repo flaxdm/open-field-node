@@ -21,6 +21,7 @@ The project is still in architecture definition. v0.2 is not a shopping list.
 | D5 | MVP purchase scope is limited to: core carrier, power, status, one network module, one LoRa module | accepted |
 | D6 | DMR, LTE/SIM, second Wi-Fi, dual Ethernet and SDR host are post-MVP expansion modules | accepted |
 | D7 | Low-speed modules use a keyed IDC 2×8 connector; high-speed uses one PCIe x1 edge slot and one USB3 slot | accepted |
+| D8 | Dual power input: field XT30 (8–18 V, priority) + USB-C with PD trigger at 12 V, OR-ed at the input | accepted |
 
 ## Core selection rationale
 
@@ -67,7 +68,7 @@ See [Module connector comparison v0.2](MODULE-CONNECTOR-v0.2.md).
 
 See [Power architecture v0.2](POWER-ARCHITECTURE-v0.2.md). Summary:
 
-- 12 V field input backbone, 8–18 V;
+- 12 V field input backbone, 8–18 V, from XT30 (priority) or USB-C PD trigger at 12 V;
 - buck 5 V / 6 A;
 - buck 3.3 V / 2 A;
 - per-bay switched 5 V, limited to 2 A, with measurement;
@@ -122,11 +123,14 @@ A region-specific RF plan must exist before buying antennas, filters, DMR, LTE o
 - enclosure dimensions;
 - region-specific RF rules;
 - exact Class L connector keying part number;
-- per-bay limiter: IC eFuse vs discrete.
+- per-bay limiter: IC eFuse vs discrete;
+- PD trigger chip choice (CH224K / IP2721 / similar);
+- input OR-ing: Schottky diodes vs ideal-diode MOSFET.
 
 ## Progress log
 
 - Power tree and rails: drafted.
+- Dual power input (D8: XT30 priority + USB-C PD 12 V): decided.
 - Module connector classes: drafted.
 - MVP carrier block diagram: drafted.
 

@@ -9,10 +9,10 @@ Review list only — nothing here is approved for purchase. Prices are qty-1 str
 | 1 | XT30 plug board-side | XT30UPB-F or generic | 1 | 0.40 | 0.40 |
 | 2 | USB-C receptacle 16P | mid-mount SMD | 2 (in + out) | 0.30 | 0.60 |
 | 3 | PD trigger (input) | CH224K / IP2721 | 1 | 0.60 | 0.60 |
-| 4 | OR-ing Schottky | SS34 | 2 | 0.05 | 0.10 |
+| 4 | OR-ing Schottky 5 A | SS54 | 2 | 0.08 | 0.16 |
 | 5 | Reverse-polarity P-MOSFET | AO3401A-class | 1 | 0.10 | 0.10 |
 | 6 | TVS | SMBJ16A-class | 1 | 0.15 | 0.15 |
-| 7 | Input PTC polyfuse 3 A | common | 2 | 0.10 | 0.20 |
+| 7 | Input PTC polyfuse 5 A | common | 2 | 0.12 | 0.24 |
 | 8 | Buck 5 V/6 A | TPS54531 | 1 | 1.20 | 1.20 |
 | 9 | Inductor 10 µH 7 A + caps | | 1 | 1.00 | 1.00 |
 | 10 | Per-bay limiter | TPS2553D | 7 (6 bays + core) | 0.80 | 5.60 |
@@ -61,14 +61,7 @@ Excludes: CM5 core (≈45–60 for 8 GB Lite), LoRa radio module (≈5–15 for 
 
 ## Dev station (dev-kit gate, separate from field MVP)
 
-| # | Item | Part / class | Qty | Unit est. | Sum |
-|---|------|--------------|-----|-----------|-----|
-| D1 | Dev board | Raspberry Pi 5 8 GB | 1 | 80 | 80 |
-| D2 | PSU 5 V/5 A USB-C (official or PD 5A class) | | 1 | 15 | 15 |
-| D3 | Case + microSD 64 GB | | 1 | 12 | 12 |
-| D4 | LoRa USB dongle for bench (RA-02/RFM95W on USB or similar) | | 1 | 12 | 12 |
-
-Dev station subtotal ≈ 120 USD. Allowed now under dev-kit gate; does not unlock any field purchase (per SPEC D11).
+Superseded by the CM5 route (SPEC D11): see [Dev station buy list](DEV-STATION-BUYLIST.md). Key item: CM5 8 GB Lite ~17800 ₽, Waveshare BASE-A ~3000 ₽, rest ~5000 ₽; total ≈ 25–26k ₽. The CM5 later becomes the field core, so this is not extra spend.
 
 ## Cost-reduction options (decision points)
 

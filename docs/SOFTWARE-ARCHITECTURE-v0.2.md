@@ -2,9 +2,9 @@
 
 Runs on the CM5 dev station first (D11), later on the field carrier. Linux (Raspberry Pi OS base), all services user-space, systemd-managed.
 
-## Control link (open decision — needs user input)
+## Control link (decided D12: Wi-Fi AP)
 
-The node has no wireless by design. Phone ↔ node link options:
+The node has no wireless by design; the phone link is hosted on the MVP network module. Options were:
 
 | Option | Hardware | Pros | Cons |
 |--------|----------|------|------|
@@ -12,7 +12,7 @@ The node has no wireless by design. Phone ↔ node link options:
 | B. USB-C cable phone↔node (tethering) | none extra | zero RF, powers/charges from node?, max reliability | cable only; USB-C roles/PD negotiation fiddly |
 | C. BLE via ESP32 companion | ESP32 on a Class L bay | low power, modern pairing | BLE throughput low; extra module |
 
-Recommendation: **A for MVP** (the network module we must buy anyway can be a Wi-Fi AP module; control traffic is tiny and stays on the node's own AP — phone does not lose internet if it has mobile data). B as fallback. Decide before Gate 2 freeze.
+Decision (D12): **A — Wi-Fi AP on the MVP network module** (control traffic stays on the node's own AP; phone keeps mobile internet). USB-C tethering documented as fallback.
 
 ## Node services (systemd units)
 
@@ -60,7 +60,7 @@ open-field-node/
 
 ## Open questions for next paper iteration
 
-1. Control link: A/B/C (recommend A).
+1. ~~Control link~~ decided (D12).
 2. Service language: Rust vs Go (recommend Go — faster bring-up, fine for this scale; power/safety-critical bits stay in kernel/drivers anyway).
 3. Real-time telemetry rate needs (defines INA219 polling policy).
 4. App distribution: F-Droid / APK sideload (no Google dependency) — confirm.

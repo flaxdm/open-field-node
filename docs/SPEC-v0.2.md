@@ -23,6 +23,7 @@ The project is still in architecture definition. v0.2 is not a shopping list.
 | D7 | Low-speed modules use a keyed IDC 2×8 connector; high-speed uses one PCIe x1 edge slot and one USB3 slot | accepted |
 | D8 | Dual power input: field XT30 (8–18 V, priority) + USB-C with PD trigger at 12 V, OR-ed at the input | accepted |
 | D9 | Two charging outputs: USB-C PD source (9 V/2 A or 12 V/1.5 A) for fast phone charging + simple USB-A 5 V/2.4 A | accepted |
+| D10 | Module identification: ready-made third-party modules (e.g. mikroBUS Click) — manual slot configuration + I2C address hints; own/community modules — ID EEPROM in Raspberry Pi HAT format (AT24C32-class on I2C 0x50) | accepted |
 
 ## Core selection rationale
 
@@ -121,7 +122,8 @@ A region-specific RF plan must exist before buying antennas, filters, DMR, LTE o
 - final MCU companion choice;
 - battery chemistry and power path;
 - Android ↔ node control protocol;
-- module descriptor schema version;
+- module descriptor schema version (resolved by D10: Pi HAT EEPROM format);
+- Class L pinout compatibility with mikroBUS (same signal set, different power pin count — decide at schematic stage);
 - enclosure dimensions;
 - region-specific RF rules;
 - exact Class L connector keying part number;
@@ -135,12 +137,13 @@ A region-specific RF plan must exist before buying antennas, filters, DMR, LTE o
 - Power tree and rails: drafted.
 - Dual power input (D8: XT30 priority + USB-C PD 12 V): decided.
 - Charging outputs (D9: USB-C PD source + USB-A 5 V): decided.
+- Module identification (D10): manual + I2C hints for ready-made modules, Pi HAT EEPROM for own modules — decided. Module descriptor schema freeze reduces to adopting the Pi HAT EEPROM format.
 - Module connector classes: drafted.
 - MVP carrier block diagram: drafted.
 
 ## Next engineering actions
 
-1. Freeze module descriptor JSON schema.
+1. Freeze module descriptor format — adopt Pi HAT EEPROM format (open standard, existing tools).
 2. Draft backplane power tree schematic from Power architecture v0.2.
 3. Draft MVP carrier schematic (CM5 + backplane connector pinout).
 4. Confirm Class L IDC keying part numbers and current rating.

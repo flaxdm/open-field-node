@@ -14,6 +14,8 @@ Decision D11-dev (2026-11-25): dev station is a CM5 8 GB Lite (no-wireless) that
 
 **Total estimate: ~25–26k ₽.**
 
+Plus P0 prototype add-on (perforated board + power modules, see [P0 prototype assembly](P0-PROTOTYPE-v0.2.md)): **~3–3.5k ₽**. Combined first purchase: **~28–30k ₽**.
+
 After the field carrier passes Gate 3, the CM5 moves from the Waveshare dock into our board — nothing from this list is discarded.
 
 Purchase gate note: this is the only purchase allowed right now (dev-kit gate). Field purchases (carrier components, final power parts) stay locked behind Gates 1–4.

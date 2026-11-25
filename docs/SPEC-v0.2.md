@@ -25,6 +25,8 @@ The project is still in architecture definition. v0.2 is not a shopping list.
 | D9 | Two charging outputs: USB-C PD source (9 V/2 A or 12 V/1.5 A) for fast phone charging + simple USB-A 5 V/2.4 A | accepted |
 | D10 | Module identification: ready-made third-party modules (e.g. mikroBUS Click) — manual slot configuration + I2C address hints; own/community modules — ID EEPROM in Raspberry Pi HAT format (AT24C32-class on I2C 0x50) | accepted |
 | D11 | Dev station is a CM5 8 GB Lite (no-wireless, CM5108000) on a Waveshare CM5-IO-BASE-A dock, bought under the dev-kit gate; the same CM5 later becomes the field core — one purchase, no discarded hardware | accepted |
+| D12 | Control link phone ↔ node: Wi-Fi AP hosted on the MVP network module (option A); USB-C tethering reserved as fallback | accepted |
+| D13 | RF region: 868 MHz band (LoRa RU864 profile); 433 MHz kept as secondary option | accepted |
 
 ## Core selection rationale
 
@@ -133,7 +135,7 @@ A region-specific RF plan must exist before buying antennas, filters, DMR, LTE o
 - module descriptor schema version (resolved by D10: Pi HAT EEPROM format);
 - Class L pinout compatibility with mikroBUS (same signal set, different power pin count — decide at schematic stage);
 - enclosure dimensions;
-- region-specific RF rules;
+- region-specific RF rules (closed by D13: 868 MHz; legal TX power check remains in RF plan);
 - exact Class L connector part number (family fixed: keyed shrouded IDC 2×8 2.54 mm; brand/part at PCB entry);
 - per-bay limiter: IC eFuse vs discrete;
 - PD trigger chip choice (CH224K / IP2721 / similar);
@@ -152,15 +154,15 @@ A region-specific RF plan must exist before buying antennas, filters, DMR, LTE o
 - No-purchase BOM: drafted (see BOM-v0.2.md), board total ≈30–38 USD excl. core and LoRa radio.
 - Gate 1 power budget: passed with changes — 12 V input 5 A, OR-ing SS54, bay cap 3 A, USB-A shed rule (see POWER-BUDGET-v0.2.md).
 - Module descriptor: Pi HAT EEPROM format adopted with OFN extension fields (see MODULE-DESCRIPTOR-v0.2.md).
-- Software architecture: services, control API, Android companion, survival mode drafted (see SOFTWARE-ARCHITECTURE-v0.2.md). Open: control link choice (Wi-Fi AP / USB-C / BLE).
+- Software architecture: services, control API, Android companion, survival mode drafted (see SOFTWARE-ARCHITECTURE-v0.2.md). Control link decided: Wi-Fi AP (D12).
+- RF plan draft for Gate 4 (868 MHz, see RF-PLAN-v0.2.md).
 - Ready module market check: bench bring-up of the full power tree possible from ready modules (XL4015, PDC004, INA219, MCP23017, 65 W PD source); custom work reduces to per-bay limiter + input protection (see READY-MODULES-v0.2.md).
 - Module connector classes: drafted.
 - MVP carrier block diagram: drafted.
 
 ## Next engineering actions
 
-1. Control link decision (Wi-Fi AP / USB-C / BLE) — blocks Gate 2 freeze.
-2. RF plan draft for Gate 4 (region, bands, antenna isolation) — needs region confirmation.
-3. KiCad entry of backplane power schematic + carrier schematic (after review of design pack).
-4. Envelope/mechanical draft: board size, bay spacing, front panel (blocks enclosure).
-5. First code milestone on dev station: ofn-powerd + ofn-slotd skeleton over Waveshare dock (GPIO header).
+1. KiCad entry of backplane power schematic + carrier schematic (after review of design pack).
+2. Envelope/mechanical draft: board size, bay spacing, front panel (blocks enclosure).
+3. Wi-Fi AP module selection for the MVP network slot (ESP32-class vs USB-WiFi on H2).
+4. First code milestone on dev station: ofn-powerd + ofn-slotd skeleton over Waveshare dock (GPIO header).
